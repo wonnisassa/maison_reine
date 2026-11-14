@@ -1,0 +1,7 @@
+# Logs and system artifacts
+*.log
+.DS_Store
+Thumbs.db
+
+# Raw image archive folder
+assets/images/Foto Cantik/
