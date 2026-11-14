@@ -97,6 +97,70 @@
 
     </div>
   </header>
+  <!-- Hero Slider (same as Home) -->
+<section class="hero-slider-section" id="hero-slider">
+
+<div class="hero-slider-track" id="slider-track">
+
+<div class="hero-slide-item">
+        <img src="assets/images/hero-slide-1.png" alt="Maison Reine Signature" class="hero-bg-img" />
+        <div class="hero-overlay-dark-left"></div>
+        
+        <div class="hero-content-wrapper align-left">
+          <div class="hero-textbox text-left">
+            <span class="hero-tag">Maison Reine Signature</span>
+            <h1 class="hero-heading">The Art of Quiet Luxury</h1>
+            <p class="hero-subtext">Refined silhouettes, softly worn</p>
+            <a href="belanja.html?collection=signature" class="hero-btn">Discover the Collection</a>
+          </div>
+        </div>
+      </div>
+
+<div class="hero-slide-item">
+        <img src="assets/images/hero-slide-2.png" alt="Japanese Heritage" class="hero-bg-img" />
+        <div class="hero-overlay-dark-right"></div>
+        
+        <div class="hero-content-wrapper align-right">
+          <div class="hero-textbox text-right">
+            <span class="hero-tag">Japanese Heritage</span>
+            <h1 class="hero-heading">The Beauty of Stillness</h1>
+            <p class="hero-subtext">Kimono-inspired pieces, made softly and made to last</p>
+            <a href="belanja.html?collection=japanese" class="hero-btn">Explore the Kimono</a>
+          </div>
+        </div>
+      </div>
+
+<div class="hero-slide-item">
+        <img src="assets/images/hero-slide-3.png" alt="Rare & Refined" class="hero-bg-img" />
+        <div class="hero-overlay-dark-left"></div>
+        
+        <div class="hero-content-wrapper align-left">
+          <div class="hero-textbox text-left">
+            <span class="hero-tag">Rare &amp; Refined</span>
+            <h1 class="hero-heading">The Art of Detail</h1>
+            <p class="hero-subtext">Pearl, lace, and ribbon, composed with patience.</p>
+            <a href="belanja.html?collection=exclusive" class="hero-btn">View Limited Edition</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+<button class="carousel-arrow prev" id="slide-prev" aria-label="Previous">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <button class="carousel-arrow next" id="slide-next" aria-label="Next">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+
+<div class="carousel-dots-container">
+      <div class="slider-dot active"></div>
+      <div class="slider-dot"></div>
+      <div class="slider-dot"></div>
+    </div>
+
+  </section>
+
 
   <!-- Hero / Banner Section -->
   <section class="shop-hero">
@@ -589,6 +653,38 @@
 
     // Catalog Filter & Sort Engine
     document.addEventListener('DOMContentLoaded', () => {
+      // Hero Slider (same as Home)
+      const track = document.getElementById('slider-track');
+      const dots = document.querySelectorAll('.slider-dot');
+      const btnPrev = document.getElementById('slide-prev');
+      const btnNext = document.getElementById('slide-next');
+      const heroEl = document.getElementById('hero-slider');
+      if (track && btnPrev && btnNext && heroEl) {
+        const totalSlides = 3;
+        let current = 0;
+        let timer = null;
+        function updateSlide(index) {
+          current = (index + totalSlides) % totalSlides;
+          track.style.transform = `translateX(-${current * 100}%)`;
+          dots.forEach((dot, idx) => {
+            if (idx === current) dot.classList.add('active');
+            else dot.classList.remove('active');
+          });
+        }
+        function nextSlide() { updateSlide(current + 1); }
+        function prevSlide() { updateSlide(current - 1); }
+        btnNext.addEventListener('click', () => { nextSlide(); resetTimer(); });
+        btnPrev.addEventListener('click', () => { prevSlide(); resetTimer(); });
+        dots.forEach((dot, idx) => {
+          dot.addEventListener('click', () => { updateSlide(idx); resetTimer(); });
+        });
+        function startTimer() { timer = setInterval(nextSlide, 5000); }
+        function resetTimer() { clearInterval(timer); startTimer(); }
+        heroEl.addEventListener('mouseenter', () => clearInterval(timer));
+        heroEl.addEventListener('mouseleave', startTimer);
+        startTimer();
+      }
+
       const pills = document.querySelectorAll('.filter-pill');
       const cards = Array.from(document.querySelectorAll('.shop-product-card'));
       const searchInput = document.getElementById('catalog-search');
