@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Katalog Belanja — Maison Reine</title>
+
+  <link rel="icon" type="image/png" href="assets/images/logo-clean.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/pure.css" />
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement">
+    Welcome to Maison Reine — The Art of Quiet Luxury
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+
+      <a href="index.html" class="brand-wrapper">
+        <img src="assets/images/logo-clean.png" alt="Maison Reine" class="brand-logo" />
+        <span class="brand-title">Maison Reine</span>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="belanja.html" class="nav-link active">Belanja</a>
+
+        <div class="nav-dropdown">
+          <a href="belanja.html?collection=signature" class="nav-link">
+            <span>Signature Collection</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="what-is-a-signature-collection.html" class="dropdown-item sub-desc">What Is a Signature Collection?</a>
+            <a href="belanja.html?collection=signature" class="dropdown-item">Explore Signature Pieces</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <a href="belanja.html?collection=exclusive" class="nav-link">
+            <span>Exclusive Collection</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="what-is-an-exclusive-collection.html" class="dropdown-item sub-desc">What Is an Exclusive Collection?</a>
+            <a href="belanja.html?collection=exclusive" class="dropdown-item">Explore Exclusive Pieces</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <a href="belanja.html?collection=japanese" class="nav-link">
+            <span>Japanese Collection</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="journal.html#article-japanese-collection" class="dropdown-item sub-desc">ジャパニーズコレクションを知る</a>
+            <a href="belanja.html?collection=japanese" class="dropdown-item">Japanese Kimono & Evening Collection</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <a href="#about" class="nav-link">
+            <span>About Us</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="dropdown-menu right-aligned">
+            <a href="our-story.html" class="dropdown-item">Our Story</a>
+            <a href="client-care.html" class="dropdown-item">Client Care</a>
+            <a href="journal.html" class="dropdown-item">Join Our Journal</a>
+            <a href="privacy-policy.html" class="dropdown-item">Privacy and Care</a>
+            <a href="feedback.html" class="dropdown-item">Suggestions & Feedback</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <div class="search-box">
+          <input type="text" class="search-input" id="pure-search-input" placeholder="Search curated piece..." />
+          <button type="button" class="icon-btn" id="pure-search-btn" aria-label="Search">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </button>
+        </div>
+
+        <a href="#cart" class="icon-btn" aria-label="Cart">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          <span class="cart-badge" id="cart-counter">0</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Hero / Banner Section -->
+  <section class="shop-hero">
+    <div class="shop-hero-inner">
+      <nav class="shop-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a> &bull; <span>Belanja</span>
+      </nav>
+      <h1 class="shop-hero-title">Katalog Koleksi Maison Reine</h1>
+      <p class="shop-hero-subtitle">
+        Jelajahi seluruh karya busana eksklusif yang dirancang dengan presisi tinggi, material sutra & brokat premium, serta siluet anggun untuk setiap momen istimewa Anda.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Catalog Content -->
+  <main class="shop-container">
+
+    <!-- Filters & Controls -->
+    <div class="shop-controls">
+      <!-- Collection Filter Pills -->
+      <div class="filter-pills-row" role="tablist" aria-label="Filter Koleksi">
+        <button type="button" class="filter-pill active" data-filter="all" role="tab" aria-selected="true">
+          Semua Koleksi <span class="pill-badge" id="badge-all">12</span>
+        </button>
+        <button type="button" class="filter-pill" data-filter="signature" role="tab" aria-selected="false">
+          Signature Collection <span class="pill-badge" id="badge-signature">4</span>
+        </button>
+        <button type="button" class="filter-pill" data-filter="exclusive" role="tab" aria-selected="false">
+          Exclusive Collection <span class="pill-badge" id="badge-exclusive">4</span>
+        </button>
+        <button type="button" class="filter-pill" data-filter="japanese" role="tab" aria-selected="false">
+          Japanese Collection <span class="pill-badge" id="badge-japanese">4</span>
+        </button>
+      </div>
+
+      <!-- Toolbar: Results Info, Search, Sort -->
+      <div class="shop-toolbar">
+        <div class="shop-results-info">
+          Menampilkan <strong id="visible-count">12</strong> dari <strong>12</strong> produk
+        </div>
+
+        <div class="shop-actions-group">
+          <!-- Search in Catalog -->
+          <div class="shop-search-wrapper">
+            <svg class="shop-search-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+            <input type="text" id="catalog-search" placeholder="Cari nama busana..." aria-label="Cari produk di katalog" />
+          </div>
+
+          <!-- Sort Select -->
+          <div class="shop-sort-wrapper">
+            <select id="catalog-sort" aria-label="Urutkan produk">
+              <option value="featured">Urutkan: Unggulan</option>
+              <option value="price-asc">Harga: Terendah &rarr; Tertinggi</option>
+              <option value="price-desc">Harga: Tertinggi &rarr; Terendah</option>
+              <option value="name-asc">Nama: A &rarr; Z</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Grid: All 12 Products -->
+    <div class="products-grid" id="catalog-grid">
+
+      <!-- ================= SIGNATURE COLLECTION ================= -->
+
+      <!-- 1. Noir Elegance Dress -->
+      <div class="product-card shop-product-card" data-collection="signature" data-name="Noir Elegance Dress" data-price="3650000">
+        <div class="product-image-box">
+          <span class="product-collection-badge">Signature</span>
+          <img src="assets/images/prod-noir-elegance.jpg" alt="Noir Elegance Dress" class="product-img" />
+          <div class="add-to-cart-overlay">
+            <button class="btn-add-cart" onclick="addToCart('Noir Elegance Dress', 3650000)">Quick Add</button>
+          </div>
+        </div>
+        <div class="product-meta">
+          <div class="product-rating"><span class="star-icon">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+          <a href="#" class="product-name">Noir Elegance Dress</a>
+          <span class="product-price">Rp3.650.000</span>
+          <div class="product-actions-bar">
+            <button class="btn-card-action primary" onclick="addToCart('Noir Elegance Dress', 3650000)">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+              Add to Cart
+            </button>
+            <a href="https://wa.me/62882007282358?text=Halo%20Maison%20Reine%2C%20saya%20tertarik%20dengan%20produk%20Noir%20Elegance%20Dress" target="_blank" rel="noopener noreferrer" class="btn-card-action secondary" title="Tanya via WhatsApp" aria-label="Tanya Noir Elegance Dress via WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.06C10.55 20.06 9.1 19.66 7.84 18.91L7.54 18.73L4.42 19.55L5.25 16.51L5.05 16.2C4.24 14.91 3.82 13.43 3.82 11.91C3.82 7.38 7.51 3.69 12.04 3.69C14.24 3.69 16.31 4.55 17.86 6.1C19.42 7.66 20.27 9.72 20.27 11.92C20.28 16.45 16.58 20.06 12.04 20.06ZM16.6 14.34C16.35 14.22 15.15 13.63 14.93 13.55C14.71 13.47 14.54 13.43 14.38 13.67C14.22 13.91 13.75 14.46 13.61 14.62C13.47 14.78 13.33 14.8 13.09 14.68C12.85 14.56 11.83 14.2 10.9 13.37C10.18 12.73 9.69 11.93 9.55 11.69C9.41 11.45 9.54 11.32 9.66 11.2C9.77 11.09 9.9 10.92 10.02 10.78C10.14 10.64 10.18 10.54 10.26 10.38C10.34 10.22 10.3 10.08 10.24 9.96C10.18 9.84 9.63 8.51 9.42 8.02C9.22 7.54 9.01 7.61 8.86 7.6H8.38C8.22 7.6 7.96 7.66 7.74 7.9C7.52 8.14 6.89 8.73 6.89 9.92C6.89 11.11 7.76 12.26 7.88 12.42C8 12.58 9.59 15.03 12.02 16.08C12.6 16.33 13.05 16.48 13.4 16.59C13.98 16.77 14.51 16.75 14.93 16.69C15.4 16.62 16.37 16.1 16.57 15.53C16.77 14.96 16.77 14.47 16.71 14.37C16.65 14.27 16.48 14.21 16.6 14.34Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Midnight Grace Dress -->
+      <div class="product-card shop-product-card" data-collection="signature" data-name="Midnight Grace Dress" data-price="2450000">
+        <div class="product-image-box">
+          <span class="product-collection-badge">Signature</span>
+          <img src="assets/images/prod-midnight-grace.png" alt="Midnight Grace Dress" class="product-img" />
+          <div class="add-to-cart-overlay">
+            <button class="btn-add-cart" onclick="addToCart('Midnight Grace Dress', 2450000)">Quick Add</button>
+          </div>
+        </div>
+        <div class="product-meta">
+          <div class="product-rating"><span class="star-icon">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+          <a href="#" class="product-name">Midnight Grace Dress</a>
+          <span class="product-price">Rp2.450.000</span>
+          <div class="product-actions-bar">
+            <button class="btn-card-action primary" onclick="addToCart('Midnight Grace Dress', 2450000)">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+              Add to Cart
+            </button>
+            <a href="https://wa.me/62882007282358?text=Halo%20Maison%20Reine%2C%20saya%20tertarik%20dengan%20produk%20Midnight%20Grace%20Dress" target="_blank" rel="noopener noreferrer" class="btn-card-action secondary" title="Tanya via WhatsApp" aria-label="Tanya Midnight Grace Dress via WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.06C10.55 20.06 9.1 19.66 7.84 18.91L7.54 18.73L4.42 19.55L5.25 16.51L5.05 16.2C4.24 14.91 3.82 13.43 3.82 11.91C3.82 7.38 7.51 3.69 12.04 3.69C14.24 3.69 16.31 4.55 17.86 6.1C19.42 7.66 20.27 9.72 20.27 11.92C20.28 16.45 16.58 20.06 12.04 20.06ZM16.6 14.34C16.35 14.22 15.15 13.63 14.93 13.55C14.71 13.47 14.54 13.43 14.38 13.67C14.22 13.91 13.75 14.46 13.61 14.62C13.47 14.78 13.33 14.8 13.09 14.68C12.85 14.56 11.83 14.2 10.9 13.37C10.18 12.73 9.69 11.93 9.55 11.69C9.41 11.45 9.54 11.32 9.66 11.2C9.77 11.09 9.9 10.92 10.02 10.78C10.14 10.64 10.18 10.54 10.26 10.38C10.34 10.22 10.3 10.08 10.24 9.96C10.18 9.84 9.63 8.51 9.42 8.02C9.22 7.54 9.01 7.61 8.86 7.6H8.38C8.22 7.6 7.96 7.66 7.74 7.9C7.52 8.14 6.89 8.73 6.89 9.92C6.89 11.11 7.76 12.26 7.88 12.42C8 12.58 9.59 15.03 12.02 16.08C12.6 16.33 13.05 16.48 13.4 16.59C13.98 16.77 14.51 16.75 14.93 16.69C15.4 16.62 16.37 16.1 16.57 15.53C16.77 14.96 16.77 14.47 16.71 14.37C16.65 14.27 16.48 14.21 16.6 14.34Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Luna Flow Skirt -->
+      <div class="product-card shop-product-card" data-collection="signature" data-name="Luna Flow Skirt" data-price="1850000">
+        <div class="product-image-box">
+          <span class="product-collection-badge">Signature</span>
+          <img src="assets/images/prod-luna-flow.jpg" alt="Luna Flow Skirt" class="product-img" />
+          <div class="add-to-cart-overlay">
+            <button class="btn-add-cart" onclick="addToCart('Luna Flow Skirt', 1850000)">Quick Add</button>
+          </div>
+        </div>
+        <div class="product-meta">
+          <div class="product-rating"><span class="star-icon">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+          <a href="#" class="product-name">Luna Flow Skirt</a>
+          <span class="product-price">Rp1.850.000</span>
+          <div class="product-actions-bar">
+            <button class="btn-card-action primary" onclick="addToCart('Luna Flow Skirt', 1850000)">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+              Add to Cart
+            </button>
+            <a href="https://wa.me/62882007282358?text=Halo%20Maison%20Reine%2C%20saya%20tertarik%20dengan%20produk%20Luna%20Flow%20Skirt" target="_blank" rel="noopener noreferrer" class="btn-card-action secondary" title="Tanya via WhatsApp" aria-label="Tanya Luna Flow Skirt via WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.06C10.55 20.06 9.1 19.66 7.84 18.91L7.54 18.73L4.42 19.55L5.25 16.51L5.05 16.2C4.24 14.91 3.82 13.43 3.82 11.91C3.82 7.38 7.51 3.69 12.04 3.69C14.24 3.69 16.31 4.55 17.86 6.1C19.42 7.66 20.27 9.72 20.27 11.92C20.28 16.45 16.58 20.06 12.04 20.06ZM16.6 14.34C16.35 14.22 15.15 13.63 14.93 13.55C14.71 13.47 14.54 13.43 14.38 13.67C14.22 13.91 13.75 14.46 13.61 14.62C13.47 14.78 13.33 14.8 13.09 14.68C12.85 14.56 11.83 14.2 10.9 13.37C10.18 12.73 9.69 11.93 9.55 11.69C9.41 11.45 9.54 11.32 9.66 11.2C9.77 11.09 9.9 10.92 10.02 10.78C10.14 10.64 10.18 10.54 10.26 10.38C10.34 10.22 10.3 10.08 10.24 9.96C10.18 9.84 9.63 8.51 9.42 8.02C9.22 7.54 9.01 7.61 8.86 7.6H8.38C8.22 7.6 7.96 7.66 7.74 7.9C7.52 8.14 6.89 8.73 6.89 9.92C6.89 11.11 7.76 12.26 7.88 12.42C8 12.58 9.59 15.03 12.02 16.08C12.6 16.33 13.05 16.48 13.4 16.59C13.98 16.77 14.51 16.75 14.93 16.69C15.4 16.62 16.37 16.1 16.57 15.53C16.77 14.96 16.77 14.47 16.71 14.37C16.65 14.27 16.48 14.21 16.6 14.34Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Crystal Muse Heels -->
+      <div class="product-card shop-product-card" data-collection="signature" data-name="Crystal Muse Heels" data-price="2250000">
+        <div class="product-image-box">
+          <span class="product-collection-badge">Signature</span>
+          <img src="assets/images/prod-crystal-muse.jpg" alt="Crystal Muse Heels" class="product-img" />
+          <div class="add-to-cart-overlay">
+            <button class="btn-add-cart" onclick="addToCart('Crystal Muse Heels', 2250000)">Quick Add</button>
+          </div>
+        </div>
+        <div class="product-meta">
+          <div class="product-rating"><span class="star-icon">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+          <a href="#" class="product-name">Crystal Muse Heels</a>
+          <span class="product-price">Rp2.250.000</span>
+          <div class="product-actions-bar">
+            <button class="btn-card-action primary" onclick="addToCart('Crystal Muse Heels', 2250000)">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+              Add to Cart
+            </button>
+            <a href="https://wa.me/62882007282358?text=Halo%20Maison%20Reine%2C%20saya%20tertarik%20dengan%20produk%20Crystal%20Muse%20Heels" target="_blank" rel="noopener noreferrer" class="btn-card-action secondary" title="Tanya via WhatsApp" aria-label="Tanya Crystal Muse Heels via WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.06C10.55 20.06 9.1 19.66 7.84 18.91L7.54 18.73L4.42 19.55L5.25 16.51L5.05 16.2C4.24 14.91 3.82 13.43 3.82 11.91C3.82 7.38 7.51 3.69 12.04 3.69C14.24 3.69 16.31 4.55 17.86 6.1C19.42 7.66 20.27 9.72 20.27 11.92C20.28 16.45 16.58 20.06 12.04 20.06ZM16.6 14.34C16.35 14.22 15.15 13.63 14.93 13.55C14.71 13.47 14.54 13.43 14.38 13.67C14.22 13.91 13.75 14.46 13.61 14.62C13.47 14.78 13.33 14.8 13.09 14.68C12.85 14.56 11.83 14.2 10.9 13.37C10.18 12.73 9.69 11.93 9.55 11.69C9.41 11.45 9.54 11.32 9.66 11.2C9.77 11.09 9.9 10.92 10.02 10.78C10.14 10.64 10.18 10.54 10.26 10.38C10.34 10.22 10.3 10.08 10.24 9.96C10.18 9.84 9.63 8.51 9.42 8.02C9.22 7.54 9.01 7.61 8.86 7.6H8.38C8.22 7.6 7.96 7.66 7.74 7.9C7.52 8.14 6.89 8.73 6.89 9.92C6.89 11.11 7.76 12.26 7.88 12.42C8 12.58 9.59 15.03 12.02 16.08C12.6 16.33 13.05 16.48 13.4 16.59C13.98 16.77 14.51 16.75 14.93 16.69C15.4 16.62 16.37 16.1 16.57 15.53C16.77 14.96 16.77 14.47 16.71 14.37C16.65 14.27 16.48 14.21 16.6 14.34Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= EXCLUSIVE COLLECTION ================= -->
+
+      <!-- 5. Crimson Empress Cheongsam Set -->
+      <div class="product-card shop-product-card" data-collection="exclusive" data-name="Crimson Empress Cheongsam Set" data-price="3850000">
+        <div class="product-image-box">
+          <span class="product-collection-badge">Exclusive</span>
+          <img src="assets/images/prod-crimson-empress.jpg" alt="Crimson Empress Cheongsam Set" class="product-img" />
+          <div class="add-to-cart-overlay">
+            <button class="btn-add-cart" onclick="addToCart('Crimson Empress Cheongsam Set', 3850000)">Quick Add</button>
+          </div>
+        </div>
+        <div class="product-meta">
+          <div class="product-rating"><span class="star-icon">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+          <a href="#" class="product-name">Crimson Empress Cheongsam Set</a>
+          <span class="product-price">Rp3.850.000</span>
+          <div class="product-actions-bar">
+            <button class="btn-card-action primary" onclick="addToCart('Crimson Empress Cheongsam Set', 3850000)">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+              Add to Cart
+            </button>
+            <a href="https://wa.me/62882007282358?text=Halo%20Maison%20Reine%2C%20saya%20tertarik%20dengan%20produk%20Crimson%20Empress%20Cheongsam%20Set" target="_blank" rel="noopener noreferrer" class="btn-card-action secondary" title="Tanya via WhatsApp" aria-label="Tanya Crimson Empress Cheongsam Set via WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.06C10.55 20.06 9.1 19.66 7.84 18.91L7.54 18.73L4.42 19.55L5.25 16.51L5.05 16.2C4.24 14.91 3.82 13.43 3.82 11.91C3.82 7.38 7.51 3.69 12.04 3.69C14.24 3.69 16.31 4.55 17.86 6.1C19.42 7.66 20.27 9.72 20.27 11.92C20.28 16.45 16.58 20.06 12.04 20.06ZM16.6 14.34C16.35 14.22 15.15 13.63 14.93 13.55C14.71 13.47 14.54 13.43 14.38 13.67C14.22 13.91 13.75 14.46 13.61 14.62C13.47 14.78 13.33 14.8 13.09 14.68C12.85 14.56 11.83 14.2 10.9 13.37C10.18 12.73 9.69 11.93 9.55 11.69C9.41 11.45 9.54 11.32 9.66 11.2C9.77 11.09 9.9 10.92 10.02 10.78C10.14 10.64 10.18 10.54 10.26 10.38C10.34 10.22 10.3 10.08 10.24 9.96C10.18 9.84 9.63 8.51 9.42 8.02C9.22 7.54 9.01 7.61 8.86 7.6H8.38C8.22 7.6 7.96 7.66 7.74 7.9C7.52 8.14 6.89 8.73 6.89 9.92C6.89 11.11 7.76 12.26 7.88 12.42C8 12.58 9.59 15.03 12.02 16.08C12.6 16.33 13.05 16.48 13.4 16.59C13.98 16.77 14.51 16.75 14.93 16.69C15.4 16.62 16.37 16.1 16.57 15.53C16.77 14.96 16.77 14.47 16.71 14.37C16.65 14.27 16.48 14.21 16.6 14.34Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Blossom Pearl Qipao Dress -->
+      <div class="product-card shop-product-card" data-collection="exclusive" data-name="Blossom Pearl Qipao Dress" data-price="3250000">
+        <div class="product-image-box">
+          <span class="product-collection-badge">Exclusive</span>
+          <img src="assets/images/prod-blossom-pearl.jpg" alt="Blossom Pearl Qipao Dress" class="product-img" />
+          <div class="add-to-cart-overlay">
+            <button class="btn-add-cart" onclick="addToCart('Blossom Pearl Qipao Dress', 3250000)">Quick Add</button>
+          </div>
+        </div>
+        <div class="product-meta">
+          <div class="product-rating"><span class="star-icon">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+          <a href="#" class="product-name">Blossom Pearl Qipao Dress</a>
+          <span class="product-price">Rp3.250.000</span>
+          <div class="product-actions-bar">
+            <button class="btn-card-action primary" onclick="addToCart('Blossom Pearl Qipao Dress', 3250000)">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+              Add to Cart
+            </button>
+            <a href="https://wa.me/62882007282358?text=Halo%20Maison%20Reine%2C%20saya%20tertarik%20dengan%20produk%20Blossom%20Pearl%20Qipao%20Dress" target="_blank" rel="noopener noreferrer" class="btn-card-action secondary" title="Tanya via WhatsApp" aria-label="Tanya Blossom Pearl Qipao Dress via WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.06C10.55 20.06 9.1 19.66 7.84 18.91L7.54 18.73L4.42 19.55L5.25 16.51L5.05 16.2C4.24 14.91 3.82 13.43 3.82 11.91C3.82 7.38 7.51 3.69 12.04 3.69C14.24 3.69 16.31 4.55 17.86 6.1C19.42 7.66 20.27 9.72 20.27 11.92C20.28 16.45 16.58 20.06 12.04 20.06ZM16.6 14.34C16.35 14.22 15.15 13.63 14.93 13.55C14.71 13.47 14.54 13.43 14.38 13.67C14.22 13.91 13.75 14.46 13.61 14.62C13.47 14.78 13.33 14.8 13.09 14.68C12.85 14.56 11.83 14.2 10.9 13.37C10.18 12.73 9.69 11.93 9.55 11.69C9.41 11.45 9.54 11.32 9.66 11.2C9.77 11.09 9.9 10.92 10.02 10.78C10.14 10.64 10.18 10.54 10.26 10.38C10.34 10.22 10.3 10.08 10.24 9.96C10.18 9.84 9.63 8.51 9.42 8.02C9.22 7.54 9.01 7.61 8.86 7.6H8.38C8.22 7.6 7.96 7.66 7.74 7.9C7.52 8.14 6.89 8.73 6.89 9.92C6.89 11.11 7.76 12.26 7.88 12.42C8 12.58 9.59 15.03 12.02 16.08C12.6 16.33 13.05 16.48 13.4 16.59C13.98 16.77 14.51 16.75 14.93 16.69C15.4 16.62 16.37 16.1 16.57 15.53C16.77 14.96 16.77 14.47 16.71 14.37C16.65 14.27 16.48 14.21 16.6 14.34Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Ivory Brocade Wrap Skirt -->
+      <div class="product-card shop-product-card" data-collection="exclusive" data-name="Ivory Brocade Wrap Skirt" data-price="2150000">
+        <div class="product-image-box">
+          <span class="product-collection-badge">Exclusive</span>
+          <img src="assets/images/prod-ivory-brocade.jpg" alt="Ivory Brocade Wrap Skirt" class="product-img" />
+          <div class="add-to-cart-overlay">
+            <button class="btn-add-cart" onclick="addToCart('Ivory Brocade Wrap Skirt', 2150000)">Quick Add</button>
+          </div>
+        </div>
+        <div class="product-meta">
+          <div class="product-rating"><span class="star-icon">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+          <a href="#" class="product-name">Ivory Brocade Wrap Skirt</a>
+          <span class="product-price">Rp2.150.000</span>
+          <div class="product-actions-bar">
+            <button class="btn-card-action primary" onclick="addToCart('Ivory Brocade Wrap Skirt', 2150000)">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+              Add to Cart
+            </button>
+            <a href="https://wa.me/62882007282358?text=Halo%20Maison%20Reine%2C%20saya%20tertarik%20dengan%20produk%20Ivory%20Brocade%20Wrap%20Skirt" target="_blank" rel="noopener noreferrer" class="btn-card-action secondary" title="Tanya via WhatsApp" aria-label="Tanya Ivory Brocade Wrap Skirt via WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.06C10.55 20.06 9.1 19.66 7.84 18.91L7.54 18.73L4.42 19.55L5.25 16.51L5.05 16.2C4.24 14.91 3.82 13.43 3.82 11.91C3.82 7.38 7.51 3.69 12.04 3.69C14.24 3.69 16.31 4.55 17.86 6.1C19.42 7.66 20.27 9.72 20.27 11.92C20.28 16.45 16.58 20.06 12.04 20.06ZM16.6 14.34C16.35 14.22 15.15 13.63 14.93 13.55C14.71 13.47 14.54 13.43 14.38 13.67C14.22 13.91 13.75 14.46 13.61 14.62C13.47 14.78 13.33 14.8 13.09 14.68C12.85 14.56 11.83 14.2 10.9 13.37C10.18 12.73 9.69 11.93 9.55 11.69C9.41 11.45 9.54 11.32 9.66 11.2C9.77 11.09 9.9 10.92 10.02 10.78C10.14 10.64 10.18 10.54 10.26 10.38C10.34 10.22 10.3 10.08 10.24 9.96C10.18 9.84 9.63 8.51 9.42 8.02C9.22 7.54 9.01 7.61 8.86 7.6H8.38C8.22 7.6 7.96 7.66 7.74 7.9C7.52 8.14 6.89 8.73 6.89 9.92C6.89 11.11 7.76 12.26 7.88 12.42C8 12.58 9.59 15.03 12.02 16.08C12.6 16.33 13.05 16.48 13.4 16.59C13.98 16.77 14.51 16.75 14.93 16.69C15.4 16.62 16.37 16.1 16.57 15.53C16.77 14.96 16.77 14.47 16.71 14.37C16.65 14.27 16.48 14.21 16.6 14.34Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Midnight Siren Gown -->
+      <div class="product-card shop-product-card" data-collection="exclusive" data-name="Midnight Siren Gown" data-price="4950000">
+        <div class="product-image-box">
+          <span class="product-collection-badge">Exclusive</span>
+          <img src="assets/images/prod-midnight-siren.jpg" alt="Midnight Siren Gown" class="product-img" />
+          <div class="add-to-cart-overlay">
+            <button class="btn-add-cart" onclick="addToCart('Midnight Siren Gown', 4950000)">Quick Add</button>
+          </div>
+        </div>
+        <div class="product-meta">
+          <div class="product-rating"><span class="star-icon">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+          <a href="#" class="product-name">Midnight Siren Gown</a>
+          <span class="product-price">Rp4.950.000</span>
+          <div class="product-actions-bar">
+            <button class="btn-card-action primary" onclick="addToCart('Midnight Siren Gown', 4950000)">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+              Add to Cart
+            </button>
+            <a href="https://wa.me/62882007282358?text=Halo%20Maison%20Reine%2C%20saya%20tertarik%20dengan%20produk%20Midnight%20Siren%20Gown" target="_blank" rel="noopener noreferrer" class="btn-card-action secondary" title="Tanya via WhatsApp" aria-label="Tanya Midnight Siren Gown via WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.06C10.55 20.06 9.1 19.66 7.84 18.91L7.54 18.73L4.42 19.55L5.25 16.51L5.05 16.2C4.24 14.91 3.82 13.43 3.82 11.91C3.82 7.38 7.51 3.69 12.04 3.69C14.24 3.69 16.31 4.55 17.86 6.1C19.42 7.66 20.27 9.72 20.27 11.92C20.28 16.45 16.58 20.06 12.04 20.06ZM16.6 14.34C16.35 14.22 15.15 13.63 14.93 13.55C14.71 13.47 14.54 13.43 14.38 13.67C14.22 13.91 13.75 14.46 13.61 14.62C13.47 14.78 13.33 14.8 13.09 14.68C12.85 14.56 11.83 14.2 10.9 13.37C10.18 12.73 9.69 11.93 9.55 11.69C9.41 11.45 9.54 11.32 9.66 11.2C9.77 11.09 9.9 10.92 10.02 10.78C10.14 10.64 10.18 10.54 10.26 10.38C10.34 10.22 10.3 10.08 10.24 9.96C10.18 9.84 9.63 8.51 9.42 8.02C9.22 7.54 9.01 7.61 8.86 7.6H8.38C8.22 7.6 7.96 7.66 7.74 7.9C7.52 8.14 6.89 8.73 6.89 9.92C6.89 11.11 7.76 12.26 7.88 12.42C8 12.58 9.59 15.03 12.02 16.08C12.6 16.33 13.05 16.48 13.4 16.59C13.98 16.77 14.51 16.75 14.93 16.69C15.4 16.62 16.37 16.1 16.57 15.53C16.77 14.96 16.77 14.47 16.71 14.37C16.65 14.27 16.48 14.21 16.6 14.34Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= JAPANESE COLLECTION ================= -->
+
+      <!-- 9. Rose Pearl Evening Gown -->
+      <div class="product-card shop-product-card" data-collection="japanese" data-name="Rose Pearl Evening Gown" data-price="4250000">
+        <div class="product-image-box">
+          <span class="product-collection-badge">Japanese</span>
+          <img src="assets/images/prod-rose-pearl.png" alt="Rose Pearl Evening Gown" class="product-img" />
+          <div class="add-to-cart-overlay">
+            <button class="btn-add-cart" onclick="addToCart('Rose Pearl Evening Gown', 4250000)">Quick Add</button>
+          </div>
+        </div>
+        <div class="product-meta">
+          <div class="product-rating"><span class="star-icon">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+          <a href="#" class="product-name">Rose Pearl Evening Gown</a>
+          <span class="product-price">Rp4.250.000</span>
+          <div class="product-actions-bar">
+            <button class="btn-card-action primary" onclick="addToCart('Rose Pearl Evening Gown', 4250000)">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+              Add to Cart
+            </button>
+            <a href="https://wa.me/62882007282358?text=Halo%20Maison%20Reine%2C%20saya%20tertarik%20dengan%20produk%20Rose%20Pearl%20Evening%20Gown" target="_blank" rel="noopener noreferrer" class="btn-card-action secondary" title="Tanya via WhatsApp" aria-label="Tanya Rose Pearl Evening Gown via WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.06C10.55 20.06 9.1 19.66 7.84 18.91L7.54 18.73L4.42 19.55L5.25 16.51L5.05 16.2C4.24 14.91 3.82 13.43 3.82 11.91C3.82 7.38 7.51 3.69 12.04 3.69C14.24 3.69 16.31 4.55 17.86 6.1C19.42 7.66 20.27 9.72 20.27 11.92C20.28 16.45 16.58 20.06 12.04 20.06ZM16.6 14.34C16.35 14.22 15.15 13.63 14.93 13.55C14.71 13.47 14.54 13.43 14.38 13.67C14.22 13.91 13.75 14.46 13.61 14.62C13.47 14.78 13.33 14.8 13.09 14.68C12.85 14.56 11.83 14.2 10.9 13.37C10.18 12.73 9.69 11.93 9.55 11.69C9.41 11.45 9.54 11.32 9.66 11.2C9.77 11.09 9.9 10.92 10.02 10.78C10.14 10.64 10.18 10.54 10.26 10.38C10.34 10.22 10.3 10.08 10.24 9.96C10.18 9.84 9.63 8.51 9.42 8.02C9.22 7.54 9.01 7.61 8.86 7.6H8.38C8.22 7.6 7.96 7.66 7.74 7.9C7.52 8.14 6.89 8.73 6.89 9.92C6.89 11.11 7.76 12.26 7.88 12.42C8 12.58 9.59 15.03 12.02 16.08C12.6 16.33 13.05 16.48 13.4 16.59C13.98 16.77 14.51 16.75 14.93 16.69C15.4 16.62 16.37 16.1 16.57 15.53C16.77 14.96 16.77 14.47 16.71 14.37C16.65 14.27 16.48 14.21 16.6 14.34Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. Noir Dame Harness Dress -->
+      <div class="product-card shop-product-card" data-collection="japanese" data-name="Noir Dame Harness Dress" data-price="2950000">
+        <div class="product-image-box">
+          <span class="product-collection-badge">Japanese</span>
+          <img src="assets/images/prod-noir-dame.png" alt="Noir Dame Harness Dress" class="product-img" />
+          <div class="add-to-cart-overlay">
+            <button class="btn-add-cart" onclick="addToCart('Noir Dame Harness Dress', 2950000)">Quick Add</button>
+          </div>
+        </div>
+        <div class="product-meta">
+          <div class="product-rating"><span class="star-icon">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+          <a href="#" class="product-name">Noir Dame Harness Dress</a>
+          <span class="product-price">Rp2.950.000</span>
+          <div class="product-actions-bar">
+            <button class="btn-card-action primary" onclick="addToCart('Noir Dame Harness Dress', 2950000)">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+              Add to Cart
+            </button>
+            <a href="https://wa.me/62882007282358?text=Halo%20Maison%20Reine%2C%20saya%20tertarik%20dengan%20produk%20Noir%20Dame%20Harness%20Dress" target="_blank" rel="noopener noreferrer" class="btn-card-action secondary" title="Tanya via WhatsApp" aria-label="Tanya Noir Dame Harness Dress via WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.06C10.55 20.06 9.1 19.66 7.84 18.91L7.54 18.73L4.42 19.55L5.25 16.51L5.05 16.2C4.24 14.91 3.82 13.43 3.82 11.91C3.82 7.38 7.51 3.69 12.04 3.69C14.24 3.69 16.31 4.55 17.86 6.1C19.42 7.66 20.27 9.72 20.27 11.92C20.28 16.45 16.58 20.06 12.04 20.06ZM16.6 14.34C16.35 14.22 15.15 13.63 14.93 13.55C14.71 13.47 14.54 13.43 14.38 13.67C14.22 13.91 13.75 14.46 13.61 14.62C13.47 14.78 13.33 14.8 13.09 14.68C12.85 14.56 11.83 14.2 10.9 13.37C10.18 12.73 9.69 11.93 9.55 11.69C9.41 11.45 9.54 11.32 9.66 11.2C9.77 11.09 9.9 10.92 10.02 10.78C10.14 10.64 10.18 10.54 10.26 10.38C10.34 10.22 10.3 10.08 10.24 9.96C10.18 9.84 9.63 8.51 9.42 8.02C9.22 7.54 9.01 7.61 8.86 7.6H8.38C8.22 7.6 7.96 7.66 7.74 7.9C7.52 8.14 6.89 8.73 6.89 9.92C6.89 11.11 7.76 12.26 7.88 12.42C8 12.58 9.59 15.03 12.02 16.08C12.6 16.33 13.05 16.48 13.4 16.59C13.98 16.77 14.51 16.75 14.93 16.69C15.4 16.62 16.37 16.1 16.57 15.53C16.77 14.96 16.77 14.47 16.71 14.37C16.65 14.27 16.48 14.21 16.6 14.34Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11. Crimson Peony Hanfu -->
+      <div class="product-card shop-product-card" data-collection="japanese" data-name="Crimson Peony Hanfu" data-price="3350000">
+        <div class="product-image-box">
+          <span class="product-collection-badge">Japanese</span>
+          <img src="assets/images/prod-crimson-peony.png" alt="Crimson Peony Hanfu" class="product-img" />
+          <div class="add-to-cart-overlay">
+            <button class="btn-add-cart" onclick="addToCart('Crimson Peony Hanfu', 3350000)">Quick Add</button>
+          </div>
+        </div>
+        <div class="product-meta">
+          <div class="product-rating"><span class="star-icon">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+          <a href="#" class="product-name">Crimson Peony Hanfu</a>
+          <span class="product-price">Rp3.350.000</span>
+          <div class="product-actions-bar">
+            <button class="btn-card-action primary" onclick="addToCart('Crimson Peony Hanfu', 3350000)">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+              Add to Cart
+            </button>
+            <a href="https://wa.me/62882007282358?text=Halo%20Maison%20Reine%2C%20saya%20tertarik%20dengan%20produk%20Crimson%20Peony%20Hanfu" target="_blank" rel="noopener noreferrer" class="btn-card-action secondary" title="Tanya via WhatsApp" aria-label="Tanya Crimson Peony Hanfu via WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.06C10.55 20.06 9.1 19.66 7.84 18.91L7.54 18.73L4.42 19.55L5.25 16.51L5.05 16.2C4.24 14.91 3.82 13.43 3.82 11.91C3.82 7.38 7.51 3.69 12.04 3.69C14.24 3.69 16.31 4.55 17.86 6.1C19.42 7.66 20.27 9.72 20.27 11.92C20.28 16.45 16.58 20.06 12.04 20.06ZM16.6 14.34C16.35 14.22 15.15 13.63 14.93 13.55C14.71 13.47 14.54 13.43 14.38 13.67C14.22 13.91 13.75 14.46 13.61 14.62C13.47 14.78 13.33 14.8 13.09 14.68C12.85 14.56 11.83 14.2 10.9 13.37C10.18 12.73 9.69 11.93 9.55 11.69C9.41 11.45 9.54 11.32 9.66 11.2C9.77 11.09 9.9 10.92 10.02 10.78C10.14 10.64 10.18 10.54 10.26 10.38C10.34 10.22 10.3 10.08 10.24 9.96C10.18 9.84 9.63 8.51 9.42 8.02C9.22 7.54 9.01 7.61 8.86 7.6H8.38C8.22 7.6 7.96 7.66 7.74 7.9C7.52 8.14 6.89 8.73 6.89 9.92C6.89 11.11 7.76 12.26 7.88 12.42C8 12.58 9.59 15.03 12.02 16.08C12.6 16.33 13.05 16.48 13.4 16.59C13.98 16.77 14.51 16.75 14.93 16.69C15.4 16.62 16.37 16.1 16.57 15.53C16.77 14.96 16.77 14.47 16.71 14.37C16.65 14.27 16.48 14.21 16.6 14.34Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12. Winter Rose Cape Dress -->
+      <div class="product-card shop-product-card" data-collection="japanese" data-name="Winter Rose Cape Dress" data-price="3850000">
+        <div class="product-image-box">
+          <span class="product-collection-badge">Japanese</span>
+          <img src="assets/images/prod-winter-rose.jpg" alt="Winter Rose Cape Dress" class="product-img" />
+          <div class="add-to-cart-overlay">
+            <button class="btn-add-cart" onclick="addToCart('Winter Rose Cape Dress', 3850000)">Quick Add</button>
+          </div>
+        </div>
+        <div class="product-meta">
+          <div class="product-rating"><span class="star-icon">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+          <a href="#" class="product-name">Winter Rose Cape Dress</a>
+          <span class="product-price">Rp3.850.000</span>
+          <div class="product-actions-bar">
+            <button class="btn-card-action primary" onclick="addToCart('Winter Rose Cape Dress', 3850000)">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+              Add to Cart
+            </button>
+            <a href="https://wa.me/62882007282358?text=Halo%20Maison%20Reine%2C%20saya%20tertarik%20dengan%20produk%20Winter%20Rose%20Cape%20Dress" target="_blank" rel="noopener noreferrer" class="btn-card-action secondary" title="Tanya via WhatsApp" aria-label="Tanya Winter Rose Cape Dress via WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.06C10.55 20.06 9.1 19.66 7.84 18.91L7.54 18.73L4.42 19.55L5.25 16.51L5.05 16.2C4.24 14.91 3.82 13.43 3.82 11.91C3.82 7.38 7.51 3.69 12.04 3.69C14.24 3.69 16.31 4.55 17.86 6.1C19.42 7.66 20.27 9.72 20.27 11.92C20.28 16.45 16.58 20.06 12.04 20.06ZM16.6 14.34C16.35 14.22 15.15 13.63 14.93 13.55C14.71 13.47 14.54 13.43 14.38 13.67C14.22 13.91 13.75 14.46 13.61 14.62C13.47 14.78 13.33 14.8 13.09 14.68C12.85 14.56 11.83 14.2 10.9 13.37C10.18 12.73 9.69 11.93 9.55 11.69C9.41 11.45 9.54 11.32 9.66 11.2C9.77 11.09 9.9 10.92 10.02 10.78C10.14 10.64 10.18 10.54 10.26 10.38C10.34 10.22 10.3 10.08 10.24 9.96C10.18 9.84 9.63 8.51 9.42 8.02C9.22 7.54 9.01 7.61 8.86 7.6H8.38C8.22 7.6 7.96 7.66 7.74 7.9C7.52 8.14 6.89 8.73 6.89 9.92C6.89 11.11 7.76 12.26 7.88 12.42C8 12.58 9.59 15.03 12.02 16.08C12.6 16.33 13.05 16.48 13.4 16.59C13.98 16.77 14.51 16.75 14.93 16.69C15.4 16.62 16.37 16.1 16.57 15.53C16.77 14.96 16.77 14.47 16.71 14.37C16.65 14.27 16.48 14.21 16.6 14.34Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Empty State -->
+      <div class="shop-empty-state" id="shop-empty">
+        <svg class="shop-empty-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
+        </svg>
+        <h3 class="shop-empty-title">Tidak Ada Busana Ditemukan</h3>
+        <p class="shop-empty-desc">
+          Kami tidak menemukan koleksi yang sesuai dengan pencarian Anda. Silakan coba kata kunci lain atau reset filter.
+        </p>
+        <button type="button" class="btn-reset-filter" id="btn-reset-filter">Reset Filter &amp; Pencarian</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+
+        <div class="footer-col footer-col--brand">
+          <div class="footer-logo-wrap">
+            <img src="assets/images/logo-clean.png" alt="Maison Reine" class="footer-logo" />
+            <span class="footer-brand-name">Maison Reine</span>
+          </div>
+          <p class="footer-tagline">Luxury fashion crafted for the woman who moves through the world with quiet grace and unshakeable confidence.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram" class="footer-social-link">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://wa.me/62882007282358" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="footer-social-link">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            </a>
+            <a href="#" aria-label="TikTok" class="footer-social-link">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-col-title">Company</h5>
+          <ul class="footer-links">
+            <li><a href="belanja.html">Belanja Katalog</a></li>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="journal.html">The Journal</a></li>
+            <li><a href="feedback.html">Suggestions &amp; Feedback</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-col-title">Collections</h5>
+          <ul class="footer-links">
+            <li><a href="belanja.html?collection=signature">Signature Edition</a></li>
+            <li><a href="belanja.html?collection=exclusive">Exclusive Edition</a></li>
+            <li><a href="belanja.html?collection=japanese">Japanese Edition</a></li>
+            <li><a href="belanja.html">Lihat Semua Busana</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-col-title">Client Care</h5>
+          <ul class="footer-links">
+            <li><a href="client-care.html">Care Concierge</a></li>
+            <li><a href="privacy-policy.html">Privacy &amp; Terms</a></li>
+            <li><a href="https://wa.me/62882007282358" target="_blank" rel="noopener noreferrer">WhatsApp Consultation</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 Maison Reine. All rights reserved. The Art of Quiet Luxury.</p>
+        <p class="footer-subtext">Designed with quiet confidence &bull; Surakarta, Indonesia</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast-notice" id="cart-toast">
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path d="M5 13l4 4L19 7"/>
+    </svg>
+    <span id="toast-text">Item added to cart!</span>
+  </div>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/62882007282358" class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp +62882007282358">
+    <span class="floating-whatsapp-tooltip">Chat with us</span>
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.06C10.55 20.06 9.1 19.66 7.84 18.91L7.54 18.73L4.42 19.55L5.25 16.51L5.05 16.2C4.24 14.91 3.82 13.43 3.82 11.91C3.82 7.38 7.51 3.69 12.04 3.69C14.24 3.69 16.31 4.55 17.86 6.1C19.42 7.66 20.27 9.72 20.27 11.92C20.28 16.45 16.58 20.06 12.04 20.06ZM16.6 14.34C16.35 14.22 15.15 13.63 14.93 13.55C14.71 13.47 14.54 13.43 14.38 13.67C14.22 13.91 13.75 14.46 13.61 14.62C13.47 14.78 13.33 14.8 13.09 14.68C12.85 14.56 11.83 14.2 10.9 13.37C10.18 12.73 9.69 11.93 9.55 11.69C9.41 11.45 9.54 11.32 9.66 11.2C9.77 11.09 9.9 10.92 10.02 10.78C10.14 10.64 10.18 10.54 10.26 10.38C10.34 10.22 10.3 10.08 10.24 9.96C10.18 9.84 9.63 8.51 9.42 8.02C9.22 7.54 9.01 7.61 8.86 7.6H8.38C8.22 7.6 7.96 7.66 7.74 7.9C7.52 8.14 6.89 8.73 6.89 9.92C6.89 11.11 7.76 12.26 7.88 12.42C8 12.58 9.59 15.03 12.02 16.08C12.6 16.33 13.05 16.48 13.4 16.59C13.98 16.77 14.51 16.75 14.93 16.69C15.4 16.62 16.37 16.1 16.57 15.53C16.77 14.96 16.77 14.47 16.71 14.37C16.65 14.27 16.48 14.21 16.6 14.34Z"/>
+    </svg>
+  </a>
+
+  <!-- JavaScript Functionality -->
+  <script>
+    // Cart Handling
+    let cart = JSON.parse(localStorage.getItem('maison_reine_cart')) || [];
+    const toast = document.getElementById('cart-toast');
+    const toastText = document.getElementById('toast-text');
+
+    function updateCartUI() {
+      const counter = document.getElementById('cart-counter');
+      if (counter) counter.textContent = cart.length;
+    }
+    updateCartUI();
+
+    function addToCart(name, price) {
+      cart.push({ name, price, date: new Date().toISOString() });
+      localStorage.setItem('maison_reine_cart', JSON.stringify(cart));
+      updateCartUI();
+
+      if (toast) {
+        toastText.textContent = `${name} ditambahkan ke keranjang!`;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2500);
+      }
+    }
+
+    // Catalog Filter & Sort Engine
+    document.addEventListener('DOMContentLoaded', () => {
+      const pills = document.querySelectorAll('.filter-pill');
+      const cards = Array.from(document.querySelectorAll('.shop-product-card'));
+      const searchInput = document.getElementById('catalog-search');
+      const sortSelect = document.getElementById('catalog-sort');
+      const visibleCount = document.getElementById('visible-count');
+      const emptyState = document.getElementById('shop-empty');
+      const resetBtn = document.getElementById('btn-reset-filter');
+      const grid = document.getElementById('catalog-grid');
+
+      let currentCollection = 'all';
+      let currentQuery = '';
+
+      // Check URL Query Parameters (e.g. ?collection=signature or #signature-collection)
+      function parseInitialFilter() {
+        const params = new URLSearchParams(window.location.search);
+        let col = params.get('collection');
+        if (!col && window.location.hash) {
+          const hash = window.location.hash.toLowerCase();
+          if (hash.includes('signature')) col = 'signature';
+          else if (hash.includes('exclusive')) col = 'exclusive';
+          else if (hash.includes('japanese')) col = 'japanese';
+        }
+        if (col && ['signature', 'exclusive', 'japanese'].includes(col)) {
+          setActivePill(col);
+        }
+      }
+
+      function setActivePill(filterVal) {
+        currentCollection = filterVal;
+        pills.forEach(p => {
+          const isMatch = p.getAttribute('data-filter') === filterVal;
+          p.classList.toggle('active', isMatch);
+          p.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+        });
+        applyFilterAndSort();
+      }
+
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          const filter = pill.getAttribute('data-filter');
+          setActivePill(filter);
+        });
+      });
+
+      // Filter & Sort Application
+      function applyFilterAndSort() {
+        let visibleItems = [];
+
+        cards.forEach(card => {
+          const col = card.getAttribute('data-collection');
+          const name = card.getAttribute('data-name').toLowerCase();
+
+          const matchesCol = (currentCollection === 'all' || col === currentCollection);
+          const matchesQuery = (!currentQuery || name.includes(currentQuery));
+
+          if (matchesCol && matchesQuery) {
+            card.classList.remove('hidden');
+            visibleItems.push(card);
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        // Sorting
+        const sortVal = sortSelect.value;
+        if (sortVal === 'price-asc') {
+          visibleItems.sort((a, b) => Number(a.dataset.price) - Number(b.dataset.price));
+        } else if (sortVal === 'price-desc') {
+          visibleItems.sort((a, b) => Number(b.dataset.price) - Number(a.dataset.price));
+        } else if (sortVal === 'name-asc') {
+          visibleItems.sort((a, b) => a.dataset.name.localeCompare(b.dataset.name));
+        }
+
+        // Re-append to maintain sorted order
+        visibleItems.forEach(card => grid.appendChild(card));
+
+        // Update counts
+        visibleCount.textContent = visibleItems.length;
+
+        // Empty state
+        if (visibleItems.length === 0) {
+          emptyState.classList.add('show');
+        } else {
+          emptyState.classList.remove('show');
+        }
+      }
+
+      // Search listeners
+      searchInput.addEventListener('input', (e) => {
+        currentQuery = e.target.value.trim().toLowerCase();
+        applyFilterAndSort();
+      });
+
+      // Sort change listener
+      sortSelect.addEventListener('change', () => {
+        applyFilterAndSort();
+      });
+
+      // Reset button
+      resetBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        currentQuery = '';
+        sortSelect.value = 'featured';
+        setActivePill('all');
+      });
+
+      // Header Search toggle
+      const sBtn = document.getElementById('pure-search-btn');
+      const sInput = document.getElementById('pure-search-input');
+      if (sBtn && sInput) {
+        sBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          sInput.classList.toggle('active');
+          if (sInput.classList.contains('active')) {
+            sInput.focus();
+          }
+        });
+        document.addEventListener('click', (e) => {
+          if (!sBtn.contains(e.target) && !sInput.contains(e.target)) {
+            sInput.classList.remove('active');
+          }
+        });
+        sInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            const q = sInput.value.trim().toLowerCase();
+            if (q) {
+              searchInput.value = q;
+              currentQuery = q;
+              setActivePill('all');
+            }
+          }
+        });
+      }
+
+      parseInitialFilter();
+    });
+  </script>
+</body>
+</html>

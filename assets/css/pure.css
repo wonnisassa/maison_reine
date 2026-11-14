@@ -1936,3 +1936,348 @@ body {
     font-size: 34px;
   }
 }
+
+/* ============================================================ */
+/* BELANJA (CATALOG & SHOP) STYLING                            */
+/* ============================================================ */
+.shop-hero {
+  background-color: #faf9f6;
+  border-bottom: 1px solid var(--color-border);
+  padding: 56px 24px 48px;
+  text-align: center;
+}
+
+.shop-hero-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.shop-breadcrumb {
+  font-size: 13px;
+  color: var(--color-muted);
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.shop-breadcrumb a {
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.shop-breadcrumb a:hover {
+  color: var(--color-gold);
+}
+
+.shop-hero-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 46px;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-dark);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.shop-hero-subtitle {
+  font-size: 15px;
+  color: var(--color-muted);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.shop-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 44px 24px 80px;
+}
+
+/* FILTER & TOOLBAR */
+.shop-controls {
+  margin-bottom: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.filter-pills-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-pill {
+  background: #ffffff;
+  color: var(--color-dark);
+  border: 1px solid var(--color-border);
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: inherit;
+}
+
+.filter-pill:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.filter-pill.active {
+  background: var(--color-dark);
+  color: #ffffff;
+  border-color: var(--color-dark);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.filter-pill .pill-badge {
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.08);
+  font-weight: 600;
+}
+
+.filter-pill.active .pill-badge {
+  background: var(--color-gold);
+  color: #ffffff;
+}
+
+.shop-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.shop-results-info {
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.shop-results-info strong {
+  color: var(--color-dark);
+}
+
+.shop-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.shop-search-wrapper {
+  position: relative;
+  width: 260px;
+}
+
+.shop-search-wrapper input {
+  width: 100%;
+  padding: 9px 14px 9px 36px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  font-size: 13px;
+  outline: none;
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+}
+
+.shop-search-wrapper input:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(197, 132, 35, 0.12);
+}
+
+.shop-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-muted);
+  pointer-events: none;
+}
+
+.shop-sort-wrapper select {
+  padding: 9px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  font-size: 13px;
+  background: #ffffff;
+  color: var(--color-dark);
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.shop-sort-wrapper select:focus {
+  border-color: var(--color-gold);
+}
+
+/* PRODUCT CARD IN CATALOG */
+.shop-product-card {
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  animation: productFadeIn 0.35s ease forwards;
+}
+
+.shop-product-card.hidden {
+  display: none !important;
+}
+
+@keyframes productFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-collection-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--color-gold);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 5;
+}
+
+.product-actions-bar {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.btn-card-action {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  font-family: inherit;
+}
+
+.btn-card-action.primary {
+  background: var(--color-dark);
+  color: #ffffff;
+}
+
+.btn-card-action.primary:hover {
+  background: var(--color-gold);
+}
+
+.btn-card-action.secondary {
+  background: #f7f7f7;
+  color: #25d366;
+  border: 1px solid #e5e5e5;
+  flex: 0 0 42px;
+  width: 42px;
+  padding: 0;
+}
+
+.btn-card-action.secondary:hover {
+  background: #25d366;
+  color: #ffffff;
+  border-color: #25d366;
+}
+
+/* EMPTY STATE */
+.shop-empty-state {
+  display: none;
+  text-align: center;
+  padding: 80px 20px;
+  grid-column: 1 / -1;
+}
+
+.shop-empty-state.show {
+  display: block;
+}
+
+.shop-empty-icon {
+  width: 64px;
+  height: 64px;
+  color: var(--color-muted);
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+.shop-empty-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 28px;
+  color: var(--color-dark);
+  margin-bottom: 8px;
+}
+
+.shop-empty-desc {
+  font-size: 14px;
+  color: var(--color-muted);
+  max-width: 420px;
+  margin: 0 auto 20px;
+}
+
+.btn-reset-filter {
+  background: var(--color-gold);
+  color: #ffffff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: inherit;
+}
+
+.btn-reset-filter:hover {
+  background: var(--color-gold-hover);
+}
+
+@media (max-width: 768px) {
+  .shop-hero-title {
+    font-size: 34px;
+  }
+  .shop-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .shop-actions-group {
+    flex-direction: column;
+  }
+  .shop-search-wrapper {
+    width: 100%;
+  }
+  .shop-sort-wrapper select {
+    width: 100%;
+  }
+}
