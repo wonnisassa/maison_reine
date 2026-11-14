@@ -1851,3 +1851,89 @@ body {
     display: none;
   }
 }
+
+/* BRAND INTRO / MANIFESTO SECTION */
+.brand-intro-section {
+  background-color: var(--color-cream);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 68px 24px 60px;
+  text-align: center;
+  position: relative;
+}
+
+.brand-intro-container {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.brand-intro-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--color-gold);
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.brand-intro-ornament .ornament-line {
+  display: inline-block;
+  width: 44px;
+  height: 1px;
+  background-color: var(--color-gold-light);
+}
+
+.brand-intro-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 24px;
+  line-height: 1.75;
+  color: #2b2b2b;
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  margin: 0;
+}
+
+.brand-intro-welcome {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 26px;
+  line-height: 1.5;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-gold);
+  letter-spacing: 0.02em;
+  margin: 4px 0 0;
+}
+
+.brand-intro-signature {
+  margin-top: 6px;
+}
+
+.brand-intro-script {
+  font-family: 'Italianno', cursive, serif;
+  font-size: 40px;
+  color: var(--color-gold);
+  line-height: 1;
+  display: inline-block;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .brand-intro-section {
+    padding: 48px 20px 42px;
+  }
+  .brand-intro-text {
+    font-size: 20px;
+    line-height: 1.65;
+  }
+  .brand-intro-welcome {
+    font-size: 22px;
+  }
+  .brand-intro-script {
+    font-size: 34px;
+  }
+}
