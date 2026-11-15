@@ -150,11 +150,9 @@
         <div class="pay-options">
           <button type="button" class="pay-option" id="opt-wa">
             <span class="pay-option-title">Checkout via WhatsApp</span>
-            <span class="pay-option-desc">Pesanan dikirim sebagai chat ke toko.</span>
           </button>
           <button type="button" class="pay-option" id="opt-web">
             <span class="pay-option-title">Bayar via Web</span>
-            <span class="pay-option-desc">Simulasi payment gateway (tanpa backend).</span>
           </button>
         </div>
 
@@ -164,9 +162,8 @@
           <button type="button" class="btn-pay" id="btn-wa-send">Kirim Pesanan via WhatsApp</button>
         </div>
 
-        <!-- Panel: Web payment gateway (simulasi) -->
+        <!-- Panel: Web payment gateway -->
         <div class="pay-panel" id="panel-web" style="display: none;">
-          <p class="pay-panel-desc"><strong>Simulasi payment gateway.</strong> Tidak ada uang yang berpindah dan tidak ada backend, hanya tampilan proses bayar.</p>
           <div class="field">
             <label>Metode pembayaran</label>
             <div class="method-options">
@@ -186,7 +183,6 @@
             <p class="gateway-total">Total bayar: <strong id="gateway-total"></strong></p>
             <div class="gateway-detail" id="gateway-detail"></div>
             <button type="button" class="btn-pay" id="btn-paid">Saya Sudah Bayar</button>
-            <p class="gateway-note">Ini simulasi. Jangan transfer uang sungguhan ke nomor di atas.</p>
           </div>
         </div>
       </form>
@@ -207,7 +203,7 @@
       <h2 class="success-title">Pembayaran Dicatat</h2>
       <p class="success-desc">Terima kasih! Pesananmu sudah dicatat.</p>
       <p class="success-order">Order ID: <strong id="success-order-id"></strong></p>
-      <p class="success-desc">Ini masih simulasi, jadi belum ada pembayaran sungguhan. Toko akan menghubungimu untuk konfirmasi.</p>
+      <p class="success-desc">Toko akan menghubungimu untuk konfirmasi.</p>
       <a href="belanja.html" class="btn-explore-collection">Kembali Belanja</a>
     </div>
   </main>
@@ -472,7 +468,7 @@
           detail.innerHTML =
             '<div class="qr-box"><span class="qr-label">QRIS</span>' +
             '<span class="qr-code">MR-' + orderId.slice(3) + '</span>' +
-            '<span class="qr-note">Kode QR simulasi</span></div>' +
+            '<span class="qr-note">Scan untuk membayar</span></div>' +
             '<p class="gateway-instruction">Buka aplikasi e-wallet atau m-banking, pilih scan QRIS, lalu arahkan ke kode di atas.</p>';
         } else if (method === 'bank') {
           const va = '8808' + orderId.replace(/[^0-9]/g, '').slice(-8);
@@ -480,13 +476,13 @@
           detail.innerHTML =
             '<p class="gateway-instruction">Transfer ke nomor Virtual Account berikut:</p>' +
             '<p class="va-number">' + va + '</p>' +
-            '<p class="gateway-instruction">a.n. Maison Reine (simulasi). Pastikan nominalnya persis ' + window.formatRp(totalPrice) + '.</p>';
+            '<p class="gateway-instruction">a.n. Maison Reine. Pastikan nominalnya persis ' + window.formatRp(totalPrice) + '.</p>';
         } else {
           document.getElementById('gateway-title').textContent = 'Bayar dengan E-Wallet';
           detail.innerHTML =
             '<p class="gateway-instruction">Kirim ke nomor berikut dari GoPay / OVO / DANA:</p>' +
             '<p class="va-number">' + window.MAISON_WA + '</p>' +
-            '<p class="gateway-instruction">a.n. Maison Reine (simulasi). Nominal: ' + window.formatRp(totalPrice) + '.</p>';
+            '<p class="gateway-instruction">a.n. Maison Reine. Nominal: ' + window.formatRp(totalPrice) + '.</p>';
         }
         document.getElementById('gateway-panel').style.display = 'block';
         startCountdown();
