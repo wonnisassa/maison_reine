@@ -2865,3 +2865,36 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* TYPE FILTER PILLS (per collection) */
+.type-pills-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.type-pill {
+  background: #ffffff;
+  color: var(--color-muted);
+  border: 1px solid var(--color-border);
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.type-pill:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.type-pill.active {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  background: #ffffff;
+}
