@@ -2898,3 +2898,41 @@ body {
   color: var(--color-gold);
   background: #ffffff;
 }
+
+/* JOURNAL LIST + ARTICLE PAGE */
+.journal-card-tag {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 8px;
+}
+
+.journal-card-excerpt {
+  color: var(--color-muted);
+  font-size: 14px;
+  margin: 8px 0 12px;
+}
+
+.journal-read-more {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-gold);
+}
+
+.article-breadcrumb {
+  font-size: 14px;
+  color: var(--color-muted);
+  margin-bottom: 24px;
+}
+
+.article-breadcrumb a {
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+.article-breadcrumb a:hover {
+  color: var(--color-gold);
+}
