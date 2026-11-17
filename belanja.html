@@ -202,7 +202,7 @@
       <!-- Toolbar: Results Info, Search, Sort -->
       <div class="shop-toolbar">
         <div class="shop-results-info">
-          Menampilkan <strong id="visible-count">12</strong> dari <strong>12</strong> produk
+          Menampilkan <strong id="visible-count">62</strong> dari <strong id="total-count">62</strong> produk
         </div>
 
         <div class="shop-actions-group">
@@ -1892,6 +1892,7 @@
       const searchInput = document.getElementById('catalog-search');
       const sortSelect = document.getElementById('catalog-sort');
       const visibleCount = document.getElementById('visible-count');
+      const totalCount = document.getElementById('total-count');
       const emptyState = document.getElementById('shop-empty');
       const resetBtn = document.getElementById('btn-reset-filter');
       const grid = document.getElementById('catalog-grid');
@@ -2018,6 +2019,7 @@
 
         // Update counts
         visibleCount.textContent = visibleItems.length;
+        totalCount.textContent = cards.length;
 
         // Empty state
         if (visibleItems.length === 0) {

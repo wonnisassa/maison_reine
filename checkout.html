@@ -105,7 +105,7 @@
         <a href="index.html">Home</a> &bull; <a href="keranjang.html">Keranjang</a> &bull; <span>Checkout</span>
       </nav>
       <h1 class="shop-hero-title">Checkout</h1>
-      <p class="shop-hero-subtitle">Lengkapi datamu, lalu pilih cara checkout: via WhatsApp atau bayar via web.</p>
+      <p class="shop-hero-subtitle">Lengkapi datamu, lalu kirim pesananmu via WhatsApp.</p>
     </div>
   </section>
 
@@ -146,44 +146,12 @@
           <textarea id="f-catatan" rows="2" placeholder="Contoh: bungkus kado, titip pesan, dll."></textarea>
         </div>
 
-        <h2 class="checkout-section-title">Pilih Cara Checkout</h2>
-        <div class="pay-options">
-          <button type="button" class="pay-option" id="opt-wa">
-            <span class="pay-option-title">Checkout via WhatsApp</span>
-          </button>
-          <button type="button" class="pay-option" id="opt-web">
-            <span class="pay-option-title">Bayar via Web</span>
-          </button>
-        </div>
+        <h2 class="checkout-section-title">Checkout via WhatsApp</h2>
 
         <!-- Panel: WhatsApp -->
-        <div class="pay-panel" id="panel-wa" style="display: none;">
+        <div class="pay-panel" id="panel-wa">
           <p class="pay-panel-desc">Pesananmu beserta data di atas akan dikirim sebagai pesan WhatsApp ke toko.</p>
           <button type="button" class="btn-pay" id="btn-wa-send">Kirim Pesanan via WhatsApp</button>
-        </div>
-
-        <!-- Panel: Web payment gateway -->
-        <div class="pay-panel" id="panel-web" style="display: none;">
-          <div class="field">
-            <label>Metode pembayaran</label>
-            <div class="method-options">
-              <label class="method-option"><input type="radio" name="method" value="qris" checked /> QRIS</label>
-              <label class="method-option"><input type="radio" name="method" value="bank" /> Transfer Bank (BCA)</label>
-              <label class="method-option"><input type="radio" name="method" value="wallet" /> E-Wallet (GoPay / OVO / DANA)</label>
-            </div>
-          </div>
-          <button type="button" class="btn-pay" id="btn-web-next">Lanjut ke Pembayaran</button>
-
-          <div class="gateway-panel" id="gateway-panel" style="display: none;">
-            <div class="gateway-head">
-              <span class="gateway-title" id="gateway-title">Pembayaran</span>
-              <span class="countdown" id="gateway-countdown">15:00</span>
-            </div>
-            <p class="gateway-order">Order ID: <strong id="gateway-order-id"></strong></p>
-            <p class="gateway-total">Total bayar: <strong id="gateway-total"></strong></p>
-            <div class="gateway-detail" id="gateway-detail"></div>
-            <button type="button" class="btn-pay" id="btn-paid">Saya Sudah Bayar</button>
-          </div>
         </div>
       </form>
 
@@ -197,15 +165,6 @@
       </aside>
     </div>
 
-    <!-- Success State -->
-    <div class="success-panel" id="checkout-success" style="display: none;">
-      <div class="success-check">&#10003;</div>
-      <h2 class="success-title">Pembayaran Dicatat</h2>
-      <p class="success-desc">Terima kasih! Pesananmu sudah dicatat.</p>
-      <p class="success-order">Order ID: <strong id="success-order-id"></strong></p>
-      <p class="success-desc">Toko akan menghubungimu untuk konfirmasi.</p>
-      <a href="belanja.html" class="btn-explore-collection">Kembali Belanja</a>
-    </div>
   </main>
 
   <!-- Footer -->
@@ -331,7 +290,6 @@
 
     const orderId = makeOrderId();
     let totalPrice = 0;
-    let countdownTimer = null;
 
     function buyerData() {
       return {
@@ -358,23 +316,6 @@
 
     function orderLines() {
       return groupedCart().map((g) => g.qty + 'x ' + g.name + ' — ' + window.formatRp(g.price * g.qty));
-    }
-
-    function startCountdown() {
-      let seconds = 15 * 60;
-      const el = document.getElementById('gateway-countdown');
-      if (countdownTimer) clearInterval(countdownTimer);
-      countdownTimer = setInterval(() => {
-        seconds--;
-        if (seconds <= 0) {
-          clearInterval(countdownTimer);
-          el.textContent = '00:00';
-          return;
-        }
-        const m = String(Math.floor(seconds / 60)).padStart(2, '0');
-        const s = String(seconds % 60).padStart(2, '0');
-        el.textContent = m + ':' + s;
-      }, 1000);
     }
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -431,22 +372,8 @@
       }).join('');
       document.getElementById('summary-total').textContent = window.formatRp(totalPrice);
 
-      const optWa = document.getElementById('opt-wa');
-      const optWeb = document.getElementById('opt-web');
-      const panelWa = document.getElementById('panel-wa');
-      const panelWeb = document.getElementById('panel-web');
-
-      function selectOption(which) {
-        if (!validForm()) return;
-        optWa.classList.toggle('active', which === 'wa');
-        optWeb.classList.toggle('active', which === 'web');
-        panelWa.style.display = which === 'wa' ? 'block' : 'none';
-        panelWeb.style.display = which === 'web' ? 'block' : 'none';
-      }
-      optWa.addEventListener('click', () => selectOption('wa'));
-      optWeb.addEventListener('click', () => selectOption('web'));
-
       document.getElementById('btn-wa-send').addEventListener('click', () => {
+        if (!validForm()) return;
         const b = buyerData();
         const msg = 'Halo Maison Reine, saya mau pesan:\n' +
           orderLines().join('\n') + '\nTotal: ' + window.formatRp(totalPrice) +
@@ -456,47 +383,6 @@
           (b.catatan ? '\nCatatan: ' + b.catatan : '') +
           '\nOrder ID: ' + orderId;
         window.open('https://wa.me/' + window.MAISON_WA + '?text=' + encodeURIComponent(msg), '_blank');
-      });
-
-      document.getElementById('btn-web-next').addEventListener('click', () => {
-        const method = document.querySelector('input[name="method"]:checked').value;
-        const detail = document.getElementById('gateway-detail');
-        document.getElementById('gateway-order-id').textContent = orderId;
-        document.getElementById('gateway-total').textContent = window.formatRp(totalPrice);
-        if (method === 'qris') {
-          document.getElementById('gateway-title').textContent = 'Bayar dengan QRIS';
-          detail.innerHTML =
-            '<div class="qr-box"><span class="qr-label">QRIS</span>' +
-            '<span class="qr-code">MR-' + orderId.slice(3) + '</span>' +
-            '<span class="qr-note">Scan untuk membayar</span></div>' +
-            '<p class="gateway-instruction">Buka aplikasi e-wallet atau m-banking, pilih scan QRIS, lalu arahkan ke kode di atas.</p>';
-        } else if (method === 'bank') {
-          const va = '8808' + orderId.replace(/[^0-9]/g, '').slice(-8);
-          document.getElementById('gateway-title').textContent = 'Transfer Bank (BCA)';
-          detail.innerHTML =
-            '<p class="gateway-instruction">Transfer ke nomor Virtual Account berikut:</p>' +
-            '<p class="va-number">' + va + '</p>' +
-            '<p class="gateway-instruction">a.n. Maison Reine. Pastikan nominalnya persis ' + window.formatRp(totalPrice) + '.</p>';
-        } else {
-          document.getElementById('gateway-title').textContent = 'Bayar dengan E-Wallet';
-          detail.innerHTML =
-            '<p class="gateway-instruction">Kirim ke nomor berikut dari GoPay / OVO / DANA:</p>' +
-            '<p class="va-number">' + window.MAISON_WA + '</p>' +
-            '<p class="gateway-instruction">a.n. Maison Reine. Nominal: ' + window.formatRp(totalPrice) + '.</p>';
-        }
-        document.getElementById('gateway-panel').style.display = 'block';
-        startCountdown();
-        document.getElementById('gateway-panel').scrollIntoView({ behavior: 'smooth', block: 'center' });
-      });
-
-      document.getElementById('btn-paid').addEventListener('click', () => {
-        if (countdownTimer) clearInterval(countdownTimer);
-        cart = [];
-        saveCart();
-        document.getElementById('checkout-content').style.display = 'none';
-        document.getElementById('success-order-id').textContent = orderId;
-        document.getElementById('checkout-success').style.display = 'block';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
   </script>
