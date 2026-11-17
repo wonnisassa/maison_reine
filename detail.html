@@ -118,6 +118,7 @@
         <h1 class="detail-name" id="detail-name"></h1>
         <div class="product-rating"><span class="star-icon">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
         <p class="detail-price" id="detail-price"></p>
+        <p class="detail-price-note">Keranjang memakai harga terendah dari rentang; harga akhir dikonfirmasi via WhatsApp.</p>
         <p class="detail-desc" id="detail-desc"></p>
         <div class="detail-qty">
           <span class="detail-qty-label">Jumlah</span>
@@ -308,12 +309,12 @@
       document.getElementById('detail-collection').textContent = product.collection;
       document.getElementById('detail-collection-name').textContent = product.collection;
       document.getElementById('detail-name').textContent = product.name;
-      document.getElementById('detail-price').textContent = window.formatRp(product.price);
+      document.getElementById('detail-price').textContent = window.formatPriceRange(product);
       document.getElementById('detail-desc').textContent = product.desc;
       document.getElementById('detail-code').textContent = product.slug;
       document.getElementById('detail-wa').href =
         'https://wa.me/' + window.MAISON_WA + '?text=' +
-        encodeURIComponent('Halo Maison Reine, saya tertarik dengan produk ' + product.name + ' (' + window.formatRp(product.price) + ')');
+        encodeURIComponent('Halo Maison Reine, saya tertarik dengan produk ' + product.name + ' (' + window.formatPriceRange(product) + ')');
 
       let qty = 1;
       const qtyValue = document.getElementById('qty-value');
@@ -324,7 +325,7 @@
         qty++; qtyValue.textContent = qty;
       });
       document.getElementById('detail-add').addEventListener('click', () => {
-        addToCart(product.name, product.price, qty);
+        addToCart(product.name, product.priceMin, qty);
       });
 
       const related = window.MAISON_PRODUCTS
@@ -337,13 +338,13 @@
               '<img src="' + p.image + '" alt="' + p.name + '" class="product-img" />' +
             '</a>' +
             '<div class="add-to-cart-overlay">' +
-              '<button class="btn-add-cart" onclick="addToCart(\'' + p.name.replace(/'/g, "\\'") + '\', ' + p.price + ')">Quick Add</button>' +
+              '<button class="btn-add-cart" onclick="addToCart(\'' + p.name.replace(/'/g, "\\'") + '\', ' + p.priceMin + ')">Quick Add</button>' +
             '</div>' +
           '</div>' +
           '<div class="product-meta">' +
             '<div class="product-rating"><span class="star-icon">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>' +
             '<a href="detail.html?produk=' + p.slug + '" class="product-name">' + p.name + '</a>' +
-            '<span class="product-price">' + window.formatRp(p.price) + '</span>' +
+            '<span class="product-price">' + window.formatPriceRange(p) + '</span>' +
           '</div>' +
         '</div>'
       )).join('');
