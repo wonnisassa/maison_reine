@@ -2937,8 +2937,3 @@ body {
   color: var(--color-gold);
 }
 
-.detail-price-note {
-  font-size: 13px;
-  color: var(--color-muted);
-  margin-top: 4px;
-}
