@@ -201,6 +201,8 @@
   </footer>
 
   <script>
+    // Keranjang dikosongkan saat halaman di-refresh (tetap tersimpan saat pindah halaman biasa)
+    try { if (performance.getEntriesByType('navigation')[0].type === 'reload') localStorage.removeItem('maison_reine_cart'); } catch (e) {}
     let cart = JSON.parse(localStorage.getItem('maison_reine_cart') || '[]');
     const cartBadge = document.getElementById('cart-counter');
     function updateCartUI() {
