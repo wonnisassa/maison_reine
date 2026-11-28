@@ -12,6 +12,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/pure.css" />
+  <style>
+    /* Mode Collection (katalog saja): sembunyikan tombol Add to Cart */
+    body.catalog-mode .product-actions-bar {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
@@ -1693,7 +1699,8 @@
     });
   </script>
   <script>
-    // Indikator menu aktif: menu Collection menyala saat halaman dibuka lewat menu Collection (#catalog-grid)
+    // Indikator menu aktif + mode katalog: menu Collection menyala dan tombol Add to Cart
+    // disembunyikan saat halaman dibuka lewat menu Collection (#catalog-grid)
     (function () {
       var belanjaLink = document.querySelector('.desktop-nav > a[href="belanja.html"]');
       var collectionLink = document.querySelector('.desktop-nav > a[href="belanja.html#catalog-grid"]');
@@ -1701,6 +1708,7 @@
         var onCollection = window.location.hash === '#catalog-grid';
         if (belanjaLink) belanjaLink.classList.toggle('active', !onCollection);
         if (collectionLink) collectionLink.classList.toggle('active', onCollection);
+        document.body.classList.toggle('catalog-mode', onCollection);
       }
       window.addEventListener('hashchange', syncNavIndicator);
       syncNavIndicator();
