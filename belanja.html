@@ -12,6 +12,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/pure.css" />
+  <style>
+    /* Mode Collection (katalog saja): sembunyikan tombol Add to Cart */
+    body.catalog-mode .product-actions-bar {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
@@ -32,7 +38,7 @@
       <nav class="desktop-nav">
         <a href="index.html" class="nav-link">Home</a>
         <a href="belanja.html" class="nav-link active">Belanja</a>
-        <a href="katalog.html" class="nav-link">Collection</a>
+        <a href="belanja.html#catalog-grid" class="nav-link">Collection</a>
 
 <div class="nav-dropdown">
           <a href="journal.html" class="nav-link">
@@ -1691,6 +1697,22 @@
       renderTypePills();
       parseInitialFilter();
     });
+  </script>
+  <script>
+    // Indikator menu aktif + mode katalog: menu Collection menyala dan tombol Add to Cart
+    // disembunyikan saat halaman dibuka lewat menu Collection (#catalog-grid)
+    (function () {
+      var belanjaLink = document.querySelector('.desktop-nav > a[href="belanja.html"]');
+      var collectionLink = document.querySelector('.desktop-nav > a[href="belanja.html#catalog-grid"]');
+      function syncNavIndicator() {
+        var onCollection = window.location.hash === '#catalog-grid';
+        if (belanjaLink) belanjaLink.classList.toggle('active', !onCollection);
+        if (collectionLink) collectionLink.classList.toggle('active', onCollection);
+        document.body.classList.toggle('catalog-mode', onCollection);
+      }
+      window.addEventListener('hashchange', syncNavIndicator);
+      syncNavIndicator();
+    })();
   </script>
 </body>
 </html>
