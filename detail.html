@@ -99,14 +99,7 @@
         <div class="product-rating"><span class="star-icon">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
         <p class="detail-price" id="detail-price"></p>
         <p class="detail-desc" id="detail-desc"></p>
-        <div class="detail-qty">
-          <span class="detail-qty-label">Jumlah</span>
-          <button type="button" class="qty-btn" id="qty-minus" aria-label="Kurangi jumlah">&minus;</button>
-          <span class="qty-value" id="qty-value">1</span>
-          <button type="button" class="qty-btn" id="qty-plus" aria-label="Tambah jumlah">+</button>
-        </div>
         <div class="detail-actions">
-          <button type="button" class="btn-detail-add" id="detail-add">Add to Cart</button>
           <a id="detail-wa" class="btn-detail-wa" href="#" target="_blank" rel="noopener noreferrer">Tanya via WhatsApp</a>
         </div>
         <div class="detail-meta">
@@ -297,17 +290,6 @@
         'https://wa.me/' + window.MAISON_WA + '?text=' +
         encodeURIComponent('Halo Maison Reine, saya tertarik dengan produk ' + product.name + ' (' + window.formatPrice(product) + ')');
 
-      let qty = 1;
-      const qtyValue = document.getElementById('qty-value');
-      document.getElementById('qty-minus').addEventListener('click', () => {
-        if (qty > 1) { qty--; qtyValue.textContent = qty; }
-      });
-      document.getElementById('qty-plus').addEventListener('click', () => {
-        qty++; qtyValue.textContent = qty;
-      });
-      document.getElementById('detail-add').addEventListener('click', () => {
-        addToCart(product.name, product.price, qty);
-      });
 
       const related = window.MAISON_PRODUCTS
         .filter((p) => p.collection === product.collection && p.slug !== product.slug)
@@ -318,9 +300,6 @@
             '<a class="product-img-link" href="detail.html?produk=' + p.slug + '">' +
               '<img src="' + p.image + '" alt="' + p.name + '" class="product-img" />' +
             '</a>' +
-            '<div class="add-to-cart-overlay">' +
-              '<button class="btn-add-cart" onclick="addToCart(\'' + p.name.replace(/'/g, "\\'") + '\', ' + p.price + ')">Quick Add</button>' +
-            '</div>' +
           '</div>' +
           '<div class="product-meta">' +
             '<div class="product-rating"><span class="star-icon">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>' +
